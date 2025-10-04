@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'Masque';
+  src: url('./Fonts/masque.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "teko";
+  src: url('./Fonts/Furore.otf');
+}
