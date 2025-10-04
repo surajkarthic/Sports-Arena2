@@ -4,8 +4,19 @@ import {
 } from "react-icons/fa";
 import { FooterString } from "../Commons/FooterComponentString";
 import { HeaderStrings } from "../Commons/HeaderComponentString";
-
+import {  useLocation, useNavigate } from "react-router-dom";
 const Footer = () => {
+    const navigate = useNavigate()
+  const location = useLocation();
+
+  const handleNavigate = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
   return (
     <footer  id="contact" className="bg-blue-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-10 md:flex md:justify-between md:items-start gap-8">
@@ -53,9 +64,14 @@ const Footer = () => {
 
       <div className="border-t border-white/30 mt-4 py-4 flex flex-col md:flex-row justify-between items-center px-4 max-w-7xl mx-auto text-sm">
         <div className="flex items-center space-x-3 mb-2 md:mb-0">
-          <div className="font-extrabold tracking-wider cursor-pointer font-masque text-2xl text-center whitespace-nowrap">
-            {HeaderStrings.SPORTS_ARENA}
-          </div>
+<div
+  className="font-extrabold tracking-wider cursor-pointer font-masque text-2xl text-center whitespace-nowrap"
+  onClick={handleNavigate}
+>
+  {HeaderStrings.SPORTS_ARENA}
+</div>
+
+
         </div>
         <p>{FooterString.CopyRight}</p>
       </div>
