@@ -11,6 +11,9 @@ module.exports = {
         masque: ['Masque', 'sans-serif'],
         teko: ['Teko', 'sans-serif'],// 'masque' is the class name you will use
       },
+      colors: {
+        sand: '#f5f0dc', // light sand color
+      },
     },
   },
   plugins: [],

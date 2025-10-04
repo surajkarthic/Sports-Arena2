@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { HeaderStrings } from "../Commons/HeaderComponentString";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const menuItems = ["Home", "Categories", "About Us", "Contact"];
+    const menuItems = [HeaderStrings.Home,HeaderStrings.About_Us];
 
     return (
         <header className="sticky top-0 z-50 bg-blue-900 text-white shadow-lg">
@@ -12,14 +13,13 @@ const Header = () => {
                 <div className="flex w-full items-center justify-between">
                     <div className="md:hidden w-8"></div>
 
-{/* Logo and Tagline */}
 <div className="flex flex-col items-center flex-1">
     <div className="font-extrabold tracking-wider cursor-pointer font-masque
         text-2xl sm:text-5xl md:text-6xl lg:text-7xl text-center whitespace-nowrap">
-        SPORTS ARENA
+        {HeaderStrings.SPORTS_ARENA}
     </div>
     <div className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-teko text-green-400 mt-1 text-center break-words">
-        GEAR UP GAME ON
+        {HeaderStrings.GEAR_UP_GAME_ON}
     </div>
 </div>
 
@@ -35,7 +35,7 @@ const Header = () => {
                     {menuItems.map((link) => (
                         <a
                             key={link}
-                            href={`#${link.toLowerCase().replace(/\s+/g, "")}`}
+                            href={`${link.toLowerCase().replace(/\s+/g, "")}`}
                             className="hover:text-cyan-400 text-xl font-semibold transition-colors"
                         >
                             {link}
@@ -63,20 +63,13 @@ const Header = () => {
                             {menuItems.map((link) => (
                                 <a
                                     key={link}
-                                    href={`#${link.toLowerCase().replace(/\s+/g, "")}`}
+                                    href={`${link.toLowerCase().replace(/\s+/g, "")}`}
                                     className="hover:text-cyan-400 font-semibold mb-4 text-lg transition-colors"
                                     onClick={() => setMenuOpen(false)} // close menu on click
                                 >
                                     {link}
                                 </a>
                             ))}
-
-                            {/* <button className="bg-cyan-400 text-gray-900 px-4 py-2 rounded-md font-semibold hover:bg-cyan-600 transition mb-3 w-full text-center">
-                                🛒 Cart <span className="ml-1 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">0</span>
-                            </button>
-                            <button className="bg-cyan-400 text-gray-900 px-4 py-2 rounded-md font-semibold hover:bg-cyan-600 transition w-full text-center">
-                                Admin
-                            </button> */}
                         </motion.div>
                     )}
                 </AnimatePresence>

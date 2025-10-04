@@ -1,22 +1,23 @@
 import { motion } from "framer-motion";
+import { HomePageString } from "../Commons/HomePageStrings";
 
 const NewsTicker = () => {
-  const text = "Delivering premium sports equipment designed for performance, durability, and excellence. At Sports Arena, quality meets passion — empowering every athlete to achieve more. ";
+  const text = HomePageString.FLOATING_TEXT;
 
   return (
-    <div className="overflow-hidden whitespace-nowrap bg-gray-900 py-2">
+    <div className="overflow-hidden whitespace-nowrap bg-sand py-2">
       <motion.div
-        className="inline-block text-white font-arialblack text-lg sm:text-xl md:text-2xl"
-        animate={{ x: ["0%", "-50%"] }} // move half of total width
+        className="inline-block text-black font-arialblack text-lg sm:text-xl md:text-xl"
+        animate={{ x: ["0%", "-50%"] }} 
         transition={{
           repeat: Infinity,
           repeatType: "loop",
-          duration: 50, // slower speed
+          duration: 10,
           ease: "linear",
         }}
       >
         <span>{text}</span>
-        <span>{text}</span> {/* repeat for seamless loop */}
+        <span>{text}</span> 
       </motion.div>
     </div>
   );
